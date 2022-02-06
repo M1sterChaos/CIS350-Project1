@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Floor
   - ColorDeclare
+  - Money
+  - DisplayScoreText
   layers:
   - Default
   - TransparentFX

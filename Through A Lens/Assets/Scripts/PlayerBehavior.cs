@@ -37,8 +37,9 @@ public class PlayerBehavior : MonoBehaviour
     {
         PlayerMove();
 
-        if(Physics2D.Raycast(transform.position, -transform.up, .5f, mask))
+        if(Physics2D.Raycast(transform.position, -transform.up, 1.1f, mask))
         {
+            Debug.Log("gets to end");
             canJump = true;
         }
 

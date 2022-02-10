@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class DisplayScore : MonoBehaviour
 {
     public Text textbox;
-    public int score = 0;
+    public int score;
 
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
+
         textbox = GetComponent<Text>();
         textbox.text = "Score: 0";
     }

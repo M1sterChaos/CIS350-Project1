@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class LoseOnFall : MonoBehaviour
 {
     public GameObject gameOverText;
-    public bool gameOver;
+    public static bool gameOver;
+    public static bool won = false;
 
     // Update is called once per frame
     void Update()

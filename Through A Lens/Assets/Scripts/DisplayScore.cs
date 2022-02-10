@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DisplayScore : MonoBehaviour
 {
     public Text textbox;
     public int score;
+    public GameObject finish;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +23,10 @@ public class DisplayScore : MonoBehaviour
     void Update()
     {
         textbox.text = "Score: " + score;
+
+        if (score >= 3)
+        {
+            finish.SetActive(true);
+        }
     }
 }

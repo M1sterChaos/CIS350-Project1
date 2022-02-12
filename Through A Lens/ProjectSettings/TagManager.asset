@@ -8,6 +8,7 @@ TagManager:
   - ColorDeclare
   - Money
   - DisplayScoreText
+  - VictoryMsg
   layers:
   - Default
   - TransparentFX

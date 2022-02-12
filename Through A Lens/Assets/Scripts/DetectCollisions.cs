@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
 {
-    private DisplayScore displayScoreScript;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        displayScoreScript = GameObject.FindGameObjectWithTag("DisplayScoreText").GetComponent<DisplayScore>();
-    }
+    //private bool triggered = false;
+    public GameObject money;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        displayScoreScript.score++;
-        Destroy(collision.gameObject);
+        if (collision.CompareTag("Player") /*&& !triggered*/)
+        {
+            //triggered = true;
+            DisplayScore.score++;
+            money.SetActive(false);
+        }
+
+        //DisplayScore.score++;
+        //Destroy(collision.gameObject);
     }
 }

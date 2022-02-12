@@ -18,7 +18,6 @@ public class DisplayScore : MonoBehaviour
         score = 0;
         gameOver = false;
 
-        //scoreText = GetComponent<Text>();
         scoreText.text = "Score: 0";
     }
 
@@ -35,10 +34,10 @@ public class DisplayScore : MonoBehaviour
             finish.SetActive(true);
         }
 
-        // Show end msg depending on score
+        // Show win message when player hits goal
         if (gameOver)
         {
-                //might have to change what textbox this is
+            //might have to change what textbox this is
             victoryText.text = "You win";
 
             if (Input.GetKeyDown(KeyCode.R))

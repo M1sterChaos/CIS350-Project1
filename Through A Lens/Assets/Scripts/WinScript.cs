@@ -27,9 +27,6 @@ public class WinScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (DisplayScore.score >= 3)
-        {
-            DisplayScore.gameOver = true;
-        }
+        DisplayScore.gameOver = true;
     }
 }

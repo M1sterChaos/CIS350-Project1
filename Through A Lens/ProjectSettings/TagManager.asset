@@ -9,6 +9,7 @@ TagManager:
   - Money
   - DisplayScoreText
   - VictoryMsg
+  - ScoreManager
   layers:
   - Default
   - TransparentFX

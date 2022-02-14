@@ -4,29 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// Attach to goal
 public class WinScript : MonoBehaviour
 {
-    //public Text victoryText;
+    public Text victoryText;
 
     private void Update()
     {
-        /*
-        if (DisplayScore.gameOver)
+        //Press R to restart if game is over
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            if (DisplayScore.won)
-                //might have to change what textbox this is
-                victoryText.text = "You win";
-            else
-                victoryText.text = "You lose";
-
-            if (Input.GetKeyDown(KeyCode.R))
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        */
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        DisplayScore.gameOver = true;
+        //DisplayScore.gameOver = true;
+        victoryText.gameObject.SetActive(true);
     }
 }

@@ -9,7 +9,7 @@ public class DisplayScore : MonoBehaviour
     public Text scoreText;
     public Text victoryText;
     public static int score;
-    public static bool gameOver;
+    public /*static*/ bool gameOver;
     public GameObject finish;
 
     // Start is called before the first frame update
@@ -34,14 +34,16 @@ public class DisplayScore : MonoBehaviour
             finish.SetActive(true);
         }
 
-        // Show win message when player hits goal
+        // Show win message when player hits goal (WORK IN PROGRESS)
+    /*
         if (gameOver)
         {
             //might have to change what textbox this is
-            victoryText.text = "You win";
+            victoryText.enabled = true;
 
             if (Input.GetKeyDown(KeyCode.R))
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+    */
     }
 }

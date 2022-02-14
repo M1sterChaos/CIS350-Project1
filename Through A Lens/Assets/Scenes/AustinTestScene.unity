@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 622103519}
   m_Layer: 0
   m_Name: ScoreManager
-  m_TagString: Untagged
+  m_TagString: ScoreManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1050,7 +1050,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 57697987}
-  victoryText: {fileID: 1019269541}
+  victoryText: {fileID: 0}
+  gameOver: 0
   finish: {fileID: 1181174412}
 --- !u!4 &622103520
 Transform:
@@ -1086,12 +1087,12 @@ PrefabInstance:
     - target: {fileID: 5057238129353410302, guid: c386f4fd5a7d50c4687002a391d20cb1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.96
+      value: 9.1
       objectReference: {fileID: 0}
     - target: {fileID: 5057238129353410302, guid: c386f4fd5a7d50c4687002a391d20cb1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.22
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5057238129353410302, guid: c386f4fd5a7d50c4687002a391d20cb1,
         type: 3}
@@ -1847,18 +1848,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7261162359293370666}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1181174413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181174412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a8760b6d61c4c049a308389f183c10a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1407770238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,12 +2391,12 @@ PrefabInstance:
     - target: {fileID: 5057238129353410302, guid: c386f4fd5a7d50c4687002a391d20cb1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.9
+      value: 15.87
       objectReference: {fileID: 0}
     - target: {fileID: 5057238129353410302, guid: c386f4fd5a7d50c4687002a391d20cb1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.28
+      value: 3.18
       objectReference: {fileID: 0}
     - target: {fileID: 5057238129353410302, guid: c386f4fd5a7d50c4687002a391d20cb1,
         type: 3}
@@ -2463,15 +2452,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1181174413, guid: 3edfe2264b2f42a48b2cef2530ca52f5, type: 3}
+      propertyPath: victoryText
+      value: 
+      objectReference: {fileID: 1019269541}
     - target: {fileID: 7261162358259133349, guid: 3edfe2264b2f42a48b2cef2530ca52f5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.09
+      value: -5.71
       objectReference: {fileID: 0}
     - target: {fileID: 7261162358259133349, guid: 3edfe2264b2f42a48b2cef2530ca52f5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.43
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 7261162358259133349, guid: 3edfe2264b2f42a48b2cef2530ca52f5,
         type: 3}
@@ -2523,10 +2516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish
       objectReference: {fileID: 0}
-    - target: {fileID: 7261162358259133351, guid: 3edfe2264b2f42a48b2cef2530ca52f5,
+    - target: {fileID: 7261162358259133350, guid: 3edfe2264b2f42a48b2cef2530ca52f5,
         type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3edfe2264b2f42a48b2cef2530ca52f5, type: 3}

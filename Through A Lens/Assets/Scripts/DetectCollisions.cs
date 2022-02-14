@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// attach to money
 public class DetectCollisions : MonoBehaviour
 {
-    //private bool triggered = false;
     public GameObject money;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") /*&& !triggered*/)
+        // If the player enters money hitbox,
+        // add one to the current score and "delete"
+        // the money object
+        if (collision.CompareTag("Player"))
         {
-            //triggered = true;
             DisplayScore.score++;
             money.SetActive(false);
         }
-
-        //DisplayScore.score++;
-        //Destroy(collision.gameObject);
     }
 }

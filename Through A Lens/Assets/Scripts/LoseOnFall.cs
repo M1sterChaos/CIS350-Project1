@@ -20,7 +20,10 @@ public class LoseOnFall : MonoBehaviour
 
             // press R to restart
             if (Input.GetKeyDown(KeyCode.R))
+            {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                ColorChanger.reset();
+            }
         }
     }
 }

@@ -1,47 +1,69 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class ColorChanger : MonoBehaviour
 {
-    public static readonly Color green = Color.green;
-    public static readonly Color yellow = Color.yellow;
-    public static readonly Color red = Color.red;
-    public static readonly Color blue = Color.blue;
+    Dictionary<string, Color> ColorsList = new Dictionary<string, Color>();
 
     // Initial color is green
-    private Color _color = green;
+    private static string _colorText;
+    private static Color _color;
+
+    public static Color color
+    {
+        get { return _color; }
+    }
+
+    public static string colorText
+    {
+        get { return _colorText; }
+    }
 
     public Text textbox;
 
+    public static void reset()
+    {
+        _colorText = "GREEN";
+        _color = Color.green;
+    }
+
     void Start()
     {
+        reset();
         textbox.GetComponent<Text>();
-        textbox.text = _color.ToString();
+        textbox.text = _colorText;
         textbox.color = _color;
+
+        ColorsList.Add("GREEN", Color.green);
+        ColorsList.Add("YELLOW", Color.yellow);
+        ColorsList.Add("RED", Color.red);
+        ColorsList.Add("BLUE", Color.blue);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            _color = green;
+            _colorText = "GREEN";
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.D))
         {
-            _color = yellow;
+            _colorText = "YELLOW";
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.A))
         {
-            _color = red;
+            _colorText = "BLUE";
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
-            _color = blue;
+            _colorText = "RED";
         }
 
-        textbox.text = _color.ToString();
+        _color = ColorsList[_colorText];
+
+        textbox.text = _colorText;
         textbox.color = _color;
     }
 }

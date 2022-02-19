@@ -1,11 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/*
+ * Edited slightly by: Austin Buck
+ * Project 1 + 2
+ * Destroys money as it collides with player and how much money is left
+ */
 using UnityEngine;
 
 // attach to money
 public class DetectCollisions : MonoBehaviour
 {
     public GameObject money;
+    private GoalText GTM;
+
+    private void Start()
+    {
+        GTM = GameObject.FindGameObjectWithTag("GTM").GetComponent<GoalText>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,6 +23,7 @@ public class DetectCollisions : MonoBehaviour
         // the money object
         if (collision.CompareTag("Player"))
         {
+            GTM.moneyLeft--;
             DisplayScore.score++;
             money.SetActive(false);
         }

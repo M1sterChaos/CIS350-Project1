@@ -1,5 +1,5 @@
 ﻿/*
- * Edited slightly by: Austin Buck
+ * Zach Daly, Austin Buck
  * Project 1 + 2
  * Destroys money as it collides with player and how much money is left
  */

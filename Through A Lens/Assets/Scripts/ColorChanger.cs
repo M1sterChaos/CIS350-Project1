@@ -50,19 +50,19 @@ public class ColorChanger : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             _colorText = "GREEN";
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             _colorText = "YELLOW";
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             _colorText = "BLUE";
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             _colorText = "RED";
         }

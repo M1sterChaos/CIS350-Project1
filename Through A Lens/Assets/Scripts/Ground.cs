@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/*
+ * Evan Wieland
+ * Project 1
+ * Controls ground collision
+ */
+
+using UnityEngine;
 
 public class Ground : MonoBehaviour
 {

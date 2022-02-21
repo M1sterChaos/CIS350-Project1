@@ -1,28 +1,28 @@
-﻿using System.Collections;
+﻿/*
+ * Evan Wieland
+ * Project 1
+ * Controls the tut
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Tut : MonoBehaviour
 {
     int tut = 0;
 
-    public Text t0;
-    public Text t1;
-    public Text t2;
+    public GameObject gameObj;
 
+    public static bool tutViewed = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown || tutViewed)
         {
-            tut++;
+            tutViewed = true;
+            gameObj.SetActive(false);
         }
-
-        t0.enabled = tut == 0;
-        t1.enabled = tut == 1;
-        t2.enabled = tut == 2;
-
     }
 }

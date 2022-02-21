@@ -28,6 +28,7 @@ public class LoseOnFall : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 ColorChanger.reset();
+                Tut.tutViewed = true;
             }
         }
     }

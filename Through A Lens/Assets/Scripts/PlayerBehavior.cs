@@ -25,6 +25,9 @@ public class PlayerBehavior : MonoBehaviour
     private Vector2 move;
     private Vector2 jump;
 
+    // Prevent user input right after tut
+    private float _elapsedTime = 0;
+
     // Sets the intial jump vector, grabs layer mask, and grabs rigidbody
     void Start()
     {
@@ -38,6 +41,13 @@ public class PlayerBehavior : MonoBehaviour
     // land on the floor, and sees if you can jump
     void Update()
     {
+        // Stop all play behavior if the tut is not finished
+        if (Tut.tutViewed && _elapsedTime < 0.1)
+        {
+            _elapsedTime += Time.deltaTime;
+            return;
+        }
+
         PlayerMove();
 
         if(Physics2D.Raycast(transform.position, -transform.up, 1.1f, mask))

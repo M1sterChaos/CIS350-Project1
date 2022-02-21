@@ -1,4 +1,10 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * Evan Wieland
+ * Project 1
+ * Controls color changing
+ */
+
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -44,19 +50,19 @@ public class ColorChanger : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _colorText = "GREEN";
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             _colorText = "YELLOW";
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             _colorText = "BLUE";
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             _colorText = "RED";
         }

@@ -12,6 +12,7 @@ using UnityEngine.SceneManagement;
 public class LoseOnFall : MonoBehaviour
 {
     public GameObject gameOverText;
+    public GameObject loseBG;
     public static bool gameOver;
     public static bool won = false;
 
@@ -22,6 +23,7 @@ public class LoseOnFall : MonoBehaviour
         {
             gameOver = true;
             gameOverText.SetActive(true);
+            loseBG.SetActive(true);
 
             // press R to restart
             if (Input.GetKeyDown(KeyCode.R))

@@ -13,6 +13,7 @@ using UnityEngine.SceneManagement;
 public class WinScript : MonoBehaviour
 {
     public Text victoryText;
+    public Image vicBG;
 
     private void Update()
     {
@@ -27,5 +28,6 @@ public class WinScript : MonoBehaviour
     {
         //DisplayScore.gameOver = true;
         victoryText.gameObject.SetActive(true);
+        vicBG.gameObject.SetActive(true);
     }
 }

@@ -16,6 +16,7 @@ public class DisplayScore : MonoBehaviour
     public static int score;
     public /*static*/ bool gameOver;
     public GameObject finish;
+    public PlatformGenerator pg;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,10 @@ public class DisplayScore : MonoBehaviour
         gameOver = false;
 
         scoreText.text = "Score: 0";
+
+        finish.SetActive(false) ;
+
+        pg = gameObject.GetComponent<PlatformGenerator>();
     }
 
     // Update is called once per frame
@@ -36,6 +41,7 @@ public class DisplayScore : MonoBehaviour
         // Open finish when all money is collected
         if (score >= 3)
         {
+            Instantiate(finish, new Vector3(pg.xval, pg.yval + 2.0f, 0.0f), Quaternion.identity);
             finish.SetActive(true);
         }
 

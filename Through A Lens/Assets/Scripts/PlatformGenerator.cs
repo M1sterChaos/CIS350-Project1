@@ -22,25 +22,36 @@ public class PlatformGenerator : MonoBehaviour
     public GameObject Money;
     public GameObject Finish;
 
+    public bool speedrunlvl = false;
+
+    public float xval = 0;
+    public float yval = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         //spawn platform
         Instantiate(Grey, new Vector3(0, 0, 0), Quaternion.identity);
 
-        float xval = 0;
-        float yval = 0;
         int color;
         int lastcolor = -1;
         int moneycount = 0;
-        
 
+        float xvaldist;
 
         //spawns the number of platforms specified
         //randomized color, height, and distance between them.
         for (int i = 1; i <= numPlats; i++)
         {
-            xval = xval + Random.Range(8.0f, 12.0f) ;
+            if(speedrunlvl)
+            {
+                xvaldist = 18.0f;
+            }
+            else
+            {
+                xvaldist = Random.Range(8.0f, 12.0f);
+            }
+            xval = xval + xvaldist;
             yval = Random.Range(yval - 2.0f, yval + 2.0f);
             
 

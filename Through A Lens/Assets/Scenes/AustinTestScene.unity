@@ -1078,7 +1078,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010604510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 7.01, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1668,13 +1668,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numPlats: 10
   Grey: {fileID: 1180187846689619936, guid: 10408b44e2056d047ad47c5471002279, type: 3}
-  Red: {fileID: 2097321623684227686, guid: 6bd21b537abc1ec48a7d5e76cff92ae4, type: 3}
-  Yellow: {fileID: 7205728623395963324, guid: 93168740785a5aa4f94ef9e9e13d8f35, type: 3}
-  Green: {fileID: 6815312893902547773, guid: 8274dffdb6045214680007cbd71ec8a4, type: 3}
-  Blue: {fileID: 5095376001615577744, guid: 437bb151d6def844aa4204c804f1a566, type: 3}
   Money: {fileID: 5057238129353410300, guid: c386f4fd5a7d50c4687002a391d20cb1, type: 3}
   Finish: {fileID: 7261162358259133350, guid: 3edfe2264b2f42a48b2cef2530ca52f5, type: 3}
+  plattypes:
+  - {fileID: 6815312893902547773, guid: 8274dffdb6045214680007cbd71ec8a4, type: 3}
+  - {fileID: 7205728623395963324, guid: 93168740785a5aa4f94ef9e9e13d8f35, type: 3}
+  - {fileID: 2097321623684227686, guid: 6bd21b537abc1ec48a7d5e76cff92ae4, type: 3}
+  - {fileID: 5095376001615577744, guid: 437bb151d6def844aa4204c804f1a566, type: 3}
   speedrunlvl: 0
+  vertical: 0
   xval: 0
   yval: 0
 --- !u!4 &1422716583

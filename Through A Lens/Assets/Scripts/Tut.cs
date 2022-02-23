@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Evan Wieland
+//Project 1
+//Progresses tutorial
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

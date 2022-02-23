@@ -13,12 +13,7 @@ public class PlatformGenerator : MonoBehaviour
     //level length
     public int numPlats = 10;
 
-    public float[] platY;
-    public float[] platX;
-
-
-
-    //platform prefabs
+    //platform, money, finish line prefabs
     public GameObject Grey;
     public GameObject Red;
     public GameObject Yellow;
@@ -30,13 +25,7 @@ public class PlatformGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Creates array of x and y for platforms
-        platY = new float[numPlats];
-        platX = new float[numPlats];
-
-        platY[0] = 0.0f;
-        platX[0] = 8.0f;
-
+        //spawn platform
         Instantiate(Grey, new Vector3(0, 0, 0), Quaternion.identity);
 
         float xval = 0;
@@ -47,10 +36,11 @@ public class PlatformGenerator : MonoBehaviour
         
 
 
-
+        //spawns the number of platforms specified
+        //randomized color, height, and distance between them.
         for (int i = 1; i <= numPlats; i++)
         {
-            xval = xval + 8.0f;
+            xval = xval + Random.Range(8.0f, 12.0f) ;
             yval = Random.Range(yval - 2.0f, yval + 2.0f);
             
 
@@ -78,6 +68,7 @@ public class PlatformGenerator : MonoBehaviour
             }
             lastcolor = color;
 
+            //randomly places money on platforms. Conditions added to ensure >3 money per stage.
             if (Random.Range(1, 12) <= 3 && moneycount < 3)
             {
                 Instantiate(Money, new Vector3(xval, yval + 3.0f, 0.0f), Quaternion.identity);
@@ -94,16 +85,11 @@ public class PlatformGenerator : MonoBehaviour
         {
             Instantiate(Money, new Vector3(xval, yval + 3.0f, 0.0f), Quaternion.identity);
         }
+
+        //Finish platform
         Instantiate(Grey, new Vector3(xval + 8.0f, yval, 0.0f), Quaternion.identity);
         Instantiate(Finish, new Vector3(xval + 8.0f, yval + 1.0f), Quaternion.identity);
 
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 }

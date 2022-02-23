@@ -58,7 +58,7 @@ public class PlayerBehavior : MonoBehaviour
             canJump = true;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && canJump == true)
+        if(Input.GetKeyDown(KeyCode.W) && canJump == true)
         {
             PlayerJump();
         }

@@ -52,12 +52,6 @@ public class PlayerBehavior : MonoBehaviour
 
         PlayerMove();
 
-        if(Physics2D.Raycast(transform.position, -transform.up, 1.01f, mask))
-        {
-            Debug.Log("gets to end");
-            canJump = true;
-        }
-
         if(Input.GetKeyDown(KeyCode.W) && canJump == true)
         {
             PlayerJump();
@@ -77,5 +71,13 @@ public class PlayerBehavior : MonoBehaviour
     {
         canJump = false;
         rb.AddForce(jump * Vector2.up, ForceMode2D.Impulse);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Floor")
+        {
+            canJump = true;
+        }
     }
 }

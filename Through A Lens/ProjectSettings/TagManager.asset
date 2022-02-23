@@ -12,6 +12,7 @@ TagManager:
   - ScoreManager
   - GTM
   - Projectile
+  - Enemy
   layers:
   - Default
   - TransparentFX

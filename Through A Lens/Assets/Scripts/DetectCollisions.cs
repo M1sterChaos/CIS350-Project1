@@ -25,7 +25,7 @@ public class DetectCollisions : MonoBehaviour
         {
             GTM.moneyLeft--;
             DisplayScore.score++;
-            money.SetActive(false);
+            Destroy(money);
         }
     }
 }

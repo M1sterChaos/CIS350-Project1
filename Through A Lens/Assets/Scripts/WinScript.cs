@@ -14,6 +14,12 @@ public class WinScript : MonoBehaviour
 {
     public Text victoryText;
     public Image vicBG;
+    public DisplayScore displayScoreScript;
+
+    private void Start()
+    {
+        displayScoreScript = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<DisplayScore>();
+    }
 
     private void Update()
     {
@@ -26,7 +32,7 @@ public class WinScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //DisplayScore.gameOver = true;
+        displayScoreScript.gameOver = true;
         victoryText.gameObject.SetActive(true);
         vicBG.gameObject.SetActive(true);
     }

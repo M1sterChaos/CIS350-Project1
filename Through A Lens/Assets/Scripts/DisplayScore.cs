@@ -37,8 +37,8 @@ public class DisplayScore : MonoBehaviour
         // Open finish when all money is collected
         if (score >= 3 && !gameOver)
         {
-            Instantiate(finish, new Vector3(pg.xval, pg.yval + 2.0f, 0.0f), Quaternion.identity);
             finish.SetActive(true);
+            //Instantiate(finish, new Vector3(pg.xval, pg.yval + 2.0f, 0.0f), Quaternion.identity);
         }
     }
 }

@@ -1123,8 +1123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4cd1f9bef9c0546bdee958ba77ad1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1010604510}
   speed: 10
-  jumpSpeed: 7
+  jumpSpeed: 9
 --- !u!61 &1010604515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1675,7 +1676,7 @@ MonoBehaviour:
   numPlats: 10
   Grey: {fileID: 1180187846689619936, guid: 10408b44e2056d047ad47c5471002279, type: 3}
   Money: {fileID: 5057238129353410300, guid: c386f4fd5a7d50c4687002a391d20cb1, type: 3}
-  Finish: {fileID: 7261162358259133350, guid: 3edfe2264b2f42a48b2cef2530ca52f5, type: 3}
+  Finish: {fileID: 1038753437640713647, guid: e6327dff8961907488bccb552fbc6fd1, type: 3}
   plattypes:
   - {fileID: 6815312893902547773, guid: 8274dffdb6045214680007cbd71ec8a4, type: 3}
   - {fileID: 7205728623395963324, guid: 93168740785a5aa4f94ef9e9e13d8f35, type: 3}

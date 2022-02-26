@@ -1,5 +1,5 @@
 ﻿/*
- * Austin Buck
+ * Austin Buck, Zach Daly
  * Project 1
  * Controls player movement
  */
@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour
 {
+    // Player object
+    public GameObject player;
+
     //Speed and jump speed
     [SerializeField]
     private int speed;
@@ -78,6 +81,15 @@ public class PlayerBehavior : MonoBehaviour
         if(collision.gameObject.tag == "Floor")
         {
             canJump = true;
+
+            // Player stays on moving platform
+            player.transform.parent = collision.gameObject.transform;
         }
+    }
+
+    // Reset player.transform on leaving moving platform
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        player.transform.parent = null;
     }
 }

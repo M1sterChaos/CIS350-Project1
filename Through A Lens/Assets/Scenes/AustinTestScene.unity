@@ -1764,12 +1764,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 3571368785487764662, guid: 5b65aae10ac9f514c9986890d6d684dc,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6f21b82a014d5e74c86eba91f35d3dbc,
-        type: 3}
     - target: {fileID: 3571368785487764663, guid: 5b65aae10ac9f514c9986890d6d684dc,
         type: 3}
       propertyPath: m_LocalPosition.x

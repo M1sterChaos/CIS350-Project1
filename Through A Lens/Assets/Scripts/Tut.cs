@@ -16,9 +16,7 @@ public class Tut : MonoBehaviour
     public Text t2;
     public GameObject gameObj;
 
-
     static public bool tutViewed = false;
-
 
     // Update is called once per frame
     void Update()
@@ -30,7 +28,8 @@ public class Tut : MonoBehaviour
 
         t0.enabled = tut == 0;
         t1.enabled = tut == 1;
-        gameObject.SetActive(tut <= 1);
-        tutViewed = tut > 1;
+        t2.enabled = tut == 2;
+        gameObject.SetActive(tut <= 2 && !tutViewed);
+        tutViewed = tut > 2;
     }
 }

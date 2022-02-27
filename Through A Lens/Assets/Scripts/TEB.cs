@@ -10,10 +10,14 @@ using UnityEngine.SceneManagement;
 public class TEB : MonoBehaviour
 {
     private BoxCollider2D bc;
+    public Sprite[] enemycolors = new Sprite[4];
+    private SpriteRenderer sp;
 
     // Start is called before the first frame update
     void Start()
     {
+        sp = this.gameObject.GetComponent<SpriteRenderer>();
+        sp.sprite = enemycolors[Random.Range(0,4)];
         bc = GetComponent<BoxCollider2D>();
     }
 
@@ -29,6 +33,7 @@ public class TEB : MonoBehaviour
     {
         if (collision.gameObject.tag == "Projectile")
         {
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }

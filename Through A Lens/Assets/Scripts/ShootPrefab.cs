@@ -16,9 +16,10 @@ public class ShootPrefab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) /*&& Tut.tutViewed*/)
         {
-            Instantiate(prefabToShoot, transform.position, prefabToShoot.transform.rotation);
+            GameObject go = Instantiate(prefabToShoot, transform.position, prefabToShoot.transform.rotation);
+            Destroy (go, 3.0f);
         }
     }
 }

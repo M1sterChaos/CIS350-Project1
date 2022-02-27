@@ -44,7 +44,7 @@ public class PlayerBehavior : MonoBehaviour
     // land on the floor, and sees if you can jump
     void Update()
     {
-        if (!Tut.tutViewed) return;
+        // if (!Tut.tutViewed) return;
 
         // Stop all play behavior if the tut is not finished
         //if (Tut.tutViewed && _elapsedTime < 0.1)

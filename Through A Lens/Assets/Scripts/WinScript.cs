@@ -12,28 +12,59 @@ using UnityEngine.SceneManagement;
 // Attach to goal
 public class WinScript : MonoBehaviour
 {
-    public Text victoryText;
-    public Image vicBG;
-    public DisplayScore displayScoreScript;
+    public Canvas vicTextCanvas;
+    private int win = 0;
+    private bool complete = false;
+
+    public PlatformGenerator pg;
 
     private void Start()
     {
-        displayScoreScript = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<DisplayScore>();
+        //displayScoreScript = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<DisplayScore>();
+
+        vicTextCanvas = GameObject.FindGameObjectWithTag("VictoryMsg").GetComponent<Canvas>();
+        vicTextCanvas.enabled = false;
+
+        complete = false;
+
+        pg = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlatformGenerator>();
     }
 
     private void Update()
     {
-        //Press R to restart if game is over
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && complete)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            vicTextCanvas.enabled = false;
+            if (win <= 0)
+            {
+                GameObject.FindGameObjectWithTag("Player").transform.SetPositionAndRotation(new Vector3(0, 3, 0), Quaternion.identity);
+                pg.levelGen(1);
+            }
+            else if( win == 1 )
+            {
+                GameObject.FindGameObjectWithTag("Player").transform.SetPositionAndRotation(new Vector3(0, 3, 0), Quaternion.identity);
+                pg.levelGen(2);
+            }
+            else if (win == 2)
+            {
+                GameObject.FindGameObjectWithTag("Player").transform.SetPositionAndRotation(new Vector3(0, 3, 0), Quaternion.identity);
+                pg.levelGen(3);
+            }
+            else
+            {
+                pg.dataReset();
+                SceneManager.LoadScene("ZachMadeLevel");
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        displayScoreScript.gameOver = true;
-        victoryText.gameObject.SetActive(true);
-        vicBG.gameObject.SetActive(true);
+        if (collision.gameObject.tag == "Finish")
+        {
+            complete = true;
+            vicTextCanvas.enabled = true;
+        }
     }
+
 }

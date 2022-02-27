@@ -11,7 +11,7 @@ using UnityEngine;
 public class PlatformGenerator : MonoBehaviour
 {
     //level length
-    public int numPlats = 10;
+    public int numPlats;
 
     //platform, money, finish line prefabs
     public GameObject Grey;
@@ -20,10 +20,6 @@ public class PlatformGenerator : MonoBehaviour
 
     //array of 4 platform color prefabs
     public GameObject[] plattypes = new GameObject[4];
-
-    //levels
-    public bool speedrunlvl = false;
-    public bool vertical = false;
 
     //x and y of platforms
     public float xval = 0;
@@ -34,32 +30,58 @@ public class PlatformGenerator : MonoBehaviour
     private int lastcolor = -1;
     private int moneycount = 0;
 
+    private GameObject[] stuff;
+
     // Start is called before the first frame update
     void Start()
     {
+        levelGen(0);
+    }
+
+    public void levelGen(int level)
+    {
+        dataReset();
+
         //spawn platform
         Instantiate(Grey, new Vector3(0, 0, 0), Quaternion.identity);
 
-        //chooses which level to generate
-        if (!speedrunlvl && !vertical)
+        if (level == 0)
         {
+            numPlats = 10;
             standard();
         }
-        else if (!vertical && speedrunlvl)
+        else if (level == 1)
         {
+            numPlats = 15;
+            standard();
+        }
+        else if (level == 2)
+        {
+            numPlats = 10;
             speedrun();
         }
-        else if (!speedrunlvl && vertical)
+        else if (level == 3)
         {
-            verticallvl();
+            numPlats = 15;
+            speedrun();
         }
 
         //Finish platform
         Instantiate(Grey, new Vector3(xval + 8.0f, yval, 0.0f), Quaternion.identity);
         Instantiate(Finish, new Vector3(xval + 8.0f, yval + 1.0f), Quaternion.identity);
-
-
     }
+
+    public void dataReset()
+    {
+        stuff = GameObject.FindGameObjectsWithTag("Floor");
+        for (int i = 0; i < stuff.Length; i++)
+        {
+            Destroy(stuff[i]);
+        }
+        xval = 0;
+        yval = 0;
+    }
+
 
     //returns platform gameobject of random color
     GameObject randColor()
@@ -82,7 +104,7 @@ public class PlatformGenerator : MonoBehaviour
         for(int i = 1; i <= numPlats; i++)
         {
             xval = xval + xvaldist;
-            yval = Random.Range(yval - 2.0f, yval + 2.0f);
+            yval = Random.Range(yval - 3.5f, yval + 3.5f);
 
             moneyGen(i);
 
@@ -99,52 +121,11 @@ public class PlatformGenerator : MonoBehaviour
         {
             
             xval += xvaldist;
-            yval = Random.Range(yval - 2.0f, yval + 2.0f);
+            yval = Random.Range(yval - 3.5f, yval + 3.5f);
 
             moneyGen(i);
 
             Instantiate(randColor(), new Vector3(xval, yval, 0.0f), Quaternion.identity);
-        }
-
-    }
-
-    //generates vertical style level
-    void verticallvl()
-    {
-        xval = 0.0f;
-        yval = 0.0f;
-
-        float xvaldist = 8.0f;
-        float yvaldist = 1.5f;
-
-        bool flag = false;
-
-        for(int i = 1; i <= numPlats; i++)
-        {
-            if(i < numPlats/*/2*/)
-            {
-                xval += xvaldist;
-                yval += yvaldist;
-
-                Instantiate(randColor(), new Vector3(xval, yval, 0.0f), Quaternion.identity);
-            }
-            /*else
-            {
-                flag = true;
-                if(flag)
-                {
-                    xval -= 15.0f;
-                    Instantiate(randColor(), new Vector3(xval, yval, 0.0f), Quaternion.identity);
-                    flag = false;
-                }
-                else
-                {
-                    xval -= xvaldist;
-                    yval += yvaldist;
-                    Instantiate(randColor(), new Vector3(xval, yval, 0.0f), Quaternion.identity);
-                }
-            }*/
-            moneyGen(i);
         }
 
     }

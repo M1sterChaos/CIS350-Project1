@@ -11,12 +11,25 @@ public class Tut : MonoBehaviour
 {
     int tut = 0;
 
+    public Canvas tutorial;
     public Text t0;
     public Text t1;
     public Text t2;
-    public GameObject gameObj;
+    public Image bg;
+    //public GameObject gameObj;
 
     static public bool tutViewed = false;
+
+    private void Start()
+    {
+        tutorial = GameObject.FindGameObjectWithTag("Tutorial").GetComponent<Canvas>();
+        if (tutViewed == false)
+        {
+            tutorial.enabled = true;
+        }
+        
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -26,10 +39,15 @@ public class Tut : MonoBehaviour
             tut++;
         }
 
-        t0.enabled = tut == 0;
-        t1.enabled = tut == 1;
-        t2.enabled = tut == 2;
-        gameObject.SetActive(tut <= 2 && !tutViewed);
-        tutViewed = tut > 2;
+        bg.enabled = true;
+        t2.enabled = true;
+        t0.enabled = (tut == 0);
+        t1.enabled = (tut == 1);
+
+        if(tut > 1)
+        {
+            tutViewed = true;
+            tutorial.enabled = false;
+        }
     }
 }

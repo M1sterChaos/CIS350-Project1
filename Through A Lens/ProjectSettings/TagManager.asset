@@ -13,6 +13,8 @@ TagManager:
   - GTM
   - Projectile
   - Enemy
+  - FailMsg
+  - Tutorial
   layers:
   - Default
   - TransparentFX

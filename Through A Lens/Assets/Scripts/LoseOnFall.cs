@@ -11,10 +11,16 @@ using UnityEngine.SceneManagement;
 // attach to player
 public class LoseOnFall : MonoBehaviour
 {
-    public GameObject gameOverText;
-    public GameObject loseBG;
+    public Canvas loseScreen;
     public static bool gameOver;
     public static bool won = false;
+
+    private void Start()
+    {
+        loseScreen = GameObject.FindGameObjectWithTag("FailMsg").GetComponent<Canvas>();
+        loseScreen.enabled = false;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -22,15 +28,13 @@ public class LoseOnFall : MonoBehaviour
         if (transform.position.y < -5)
         {
             gameOver = true;
-            gameOverText.SetActive(true);
-            loseBG.SetActive(true);
+            loseScreen.enabled = true;
 
             // press R to restart
             if (Input.GetKeyDown(KeyCode.R))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                ColorChanger.reset();
-                Tut.tutViewed = true;
+                GameObject.FindGameObjectWithTag("Player").transform.SetPositionAndRotation(new Vector3(0, 1, 0), Quaternion.identity);
+                loseScreen.enabled = false;
             }
         }
     }

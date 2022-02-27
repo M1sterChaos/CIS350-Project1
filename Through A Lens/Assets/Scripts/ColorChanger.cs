@@ -6,8 +6,6 @@
 
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
 
 public class ColorChanger : MonoBehaviour
 {
@@ -23,8 +21,6 @@ public class ColorChanger : MonoBehaviour
     public static string _colorText;
     private static Color _color;
 
-    
-
     public static Color color
     {
         get { return _color; }
@@ -35,8 +31,6 @@ public class ColorChanger : MonoBehaviour
         get { return _colorText; }
     }
 
-    public Text textbox;
-
     public static void reset()
     {
         _colorText = "GREEN";
@@ -46,16 +40,13 @@ public class ColorChanger : MonoBehaviour
     void Start()
     {
         reset();
-        //textbox.GetComponent<Text>();
-        textbox.text = _colorText;
-        textbox.color = _color;
 
         ColorsList.Add("GREEN", Color.green);
         ColorsList.Add("YELLOW", Color.yellow);
         ColorsList.Add("RED", Color.red);
         ColorsList.Add("BLUE", Color.blue);
 
-        //spriteRenderer = GameObject.FindGameObjectsWithTag("Player").Get;
+        spriteRenderer = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -83,13 +74,11 @@ public class ColorChanger : MonoBehaviour
         }
 
         _color = ColorsList[_colorText];
-
-        textbox.text = _colorText;
-        textbox.color = _color;
     }
 
     void ChangeSprite(Sprite newSprite)
     {
-        spriteRenderer.sprite = newSprite;
+        if(spriteRenderer)
+            spriteRenderer.sprite = newSprite;
     }
 }

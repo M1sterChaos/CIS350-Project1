@@ -18,10 +18,12 @@ public class Ground : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // 50% chance enemy will spawn on plat 
-       bool chance = (Random.Range(0, 2) == 0);
-       enemy.SetActive(chance);
 
+       if(enemy){
+        // 50% chance enemy will spawn on plat 
+        bool chance = (Random.Range(0, 2) == 0);
+        enemy.SetActive(chance);
+       }
       
        _bc = GetComponent<BoxCollider2D>();
     }

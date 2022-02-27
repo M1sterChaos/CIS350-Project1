@@ -25,7 +25,7 @@ public class LoseOnFall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -5)
+        if (transform.position.y < -20)
         {
             gameOver = true;
             loseScreen.enabled = true;
@@ -33,7 +33,7 @@ public class LoseOnFall : MonoBehaviour
             // press R to restart
             if (Input.GetKeyDown(KeyCode.R))
             {
-                GameObject.FindGameObjectWithTag("Player").transform.SetPositionAndRotation(new Vector3(0, 1, 0), Quaternion.identity);
+                GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 3, 0);
                 loseScreen.enabled = false;
             }
         }

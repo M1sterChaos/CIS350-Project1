@@ -31,10 +31,13 @@ public class PlatformGenerator : MonoBehaviour
     private int moneycount = 0;
 
     private GameObject[] stuff;
+    public BoxCollider2D box;
 
     // Start is called before the first frame update
     void Start()
     {
+        //spawn platform
+        Instantiate(Grey, new Vector3(0, 0, 0), Quaternion.identity);
         levelGen(0);
     }
 
@@ -42,8 +45,8 @@ public class PlatformGenerator : MonoBehaviour
     {
         dataReset();
 
-        //spawn platform
-        Instantiate(Grey, new Vector3(0, 0, 0), Quaternion.identity);
+        
+        
 
         if (level == 0)
         {
@@ -65,6 +68,12 @@ public class PlatformGenerator : MonoBehaviour
             numPlats = 15;
             speedrun();
         }
+        if(!box.enabled)
+        {
+            box.enabled = true;
+        }
+        
+        
 
         //Finish platform
         Instantiate(Grey, new Vector3(xval + 8.0f, yval, 0.0f), Quaternion.identity);
@@ -78,6 +87,7 @@ public class PlatformGenerator : MonoBehaviour
         {
             Destroy(stuff[i]);
         }
+        DestroyImmediate(GameObject.FindGameObjectWithTag("Finish"), true);
         xval = 0;
         yval = 0;
     }
@@ -104,7 +114,7 @@ public class PlatformGenerator : MonoBehaviour
         for(int i = 1; i <= numPlats; i++)
         {
             xval = xval + xvaldist;
-            yval = Random.Range(yval - 3.5f, yval + 3.5f);
+            yval = Random.Range(yval - 3.0f, yval + 3.0f);
 
             moneyGen(i);
 

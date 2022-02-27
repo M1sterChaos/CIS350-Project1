@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ZachMadeScene.unity
+- path: Assets/Scenes/AustinTestScene.unity
   isLoaded: 1
   isActive: 1

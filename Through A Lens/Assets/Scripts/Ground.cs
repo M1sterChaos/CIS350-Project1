@@ -10,6 +10,7 @@ public class Ground : MonoBehaviour
 {
     public string color;
     private BoxCollider2D _bc;
+
     public GameObject enemy;
     private Random random = new Random();
 
@@ -20,12 +21,14 @@ public class Ground : MonoBehaviour
        // 50% chance enemy will spawn on plat 
        bool chance = (Random.Range(0, 2) == 0);
        enemy.SetActive(chance);
+
+
        _bc = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        _bc.enabled = ColorChanger.colorText == color;
+        _bc.enabled = (ColorChanger.colorText == color);
     }
 }

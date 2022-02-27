@@ -17,6 +17,7 @@ public class WinScript : MonoBehaviour
     private bool complete = false;
 
     public PlatformGenerator pg;
+    public BoxCollider2D bc;
 
     private void Start()
     {
@@ -37,17 +38,18 @@ public class WinScript : MonoBehaviour
             vicTextCanvas.enabled = false;
             if (win <= 0)
             {
-                GameObject.FindGameObjectWithTag("Player").transform.SetPositionAndRotation(new Vector3(0, 3, 0), Quaternion.identity);
+                GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 3, 0);
+
                 pg.levelGen(1);
             }
             else if( win == 1 )
             {
-                GameObject.FindGameObjectWithTag("Player").transform.SetPositionAndRotation(new Vector3(0, 3, 0), Quaternion.identity);
+                GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 3, 0);
                 pg.levelGen(2);
             }
             else if (win == 2)
             {
-                GameObject.FindGameObjectWithTag("Player").transform.SetPositionAndRotation(new Vector3(0, 3, 0), Quaternion.identity);
+                GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 3, 0);
                 pg.levelGen(3);
             }
             else

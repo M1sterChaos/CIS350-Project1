@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - FailMsg
   - Tutorial
+  - StartPlat
   layers:
   - Default
   - TransparentFX

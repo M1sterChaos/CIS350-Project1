@@ -23,6 +23,8 @@ public class ColorChanger : MonoBehaviour
     private static string _colorText;
     private static Color _color;
 
+    
+
     public static Color color
     {
         get { return _color; }
@@ -58,6 +60,7 @@ public class ColorChanger : MonoBehaviour
 
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             _colorText = "GREEN";

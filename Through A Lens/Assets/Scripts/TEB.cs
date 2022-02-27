@@ -32,6 +32,7 @@ public class TEB : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Player").transform.SetPositionAndRotation(new Vector3(0, 1, 0), Quaternion.identity);
             loseScreen.enabled = false;
+            hit = false;
         }
     }
 

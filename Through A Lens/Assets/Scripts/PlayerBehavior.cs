@@ -31,11 +31,14 @@ public class PlayerBehavior : MonoBehaviour
     // Prevent user input right after tut
     //private float _elapsedTime = 0;
 
+    
+
     // Sets the intial jump vector, grabs layer mask, and grabs rigidbody
     void Start()
     {
         jump = new Vector2(0, jumpSpeed);
         rb = GetComponent<Rigidbody2D>();
+        
 
         mask = LayerMask.GetMask("Floor");
     }
@@ -59,6 +62,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             PlayerJump();
         }
+        
     }
 
     //Moves the player along the x axis by grabbing the axis and setting that in a vector
@@ -78,7 +82,7 @@ public class PlayerBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Floor")
+        if(collision.gameObject.tag == "Floor" || collision.gameObject.tag == "StartPlat")
         {
             canJump = true;
 

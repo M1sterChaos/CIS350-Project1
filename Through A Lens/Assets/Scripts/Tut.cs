@@ -18,7 +18,7 @@ public class Tut : MonoBehaviour
     public Image bg;
     //public GameObject gameObj;
 
-    static public bool tutViewed = false;
+    public static bool tutViewed = false;
 
     private void Start()
     {

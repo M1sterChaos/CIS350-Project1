@@ -16,9 +16,6 @@ public class WinScript : MonoBehaviour
     private int win = 0;
     private bool complete = false;
 
-    public PlatformGenerator pg;
-    public BoxCollider2D bc;
-
     private void Start()
     {
         //displayScoreScript = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<DisplayScore>();
@@ -27,8 +24,6 @@ public class WinScript : MonoBehaviour
         vicTextCanvas.enabled = false;
 
         complete = false;
-
-        pg = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlatformGenerator>();
     }
 
     private void Update()
@@ -36,25 +31,14 @@ public class WinScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && complete)
         {
             vicTextCanvas.enabled = false;
-            if (win <= 0)
-            {
-                GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 3, 0);
 
-                pg.levelGen(1);
-            }
-            else if( win == 1 )
+            if(PlatformGenerator.level < 3)
             {
-                GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 3, 0);
-                pg.levelGen(2);
+                PlatformGenerator.level++;
+                SceneManager.LoadScene("AustinTestScene");
             }
-            else if (win == 2)
+            else if(PlatformGenerator.level == 3)
             {
-                GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 3, 0);
-                pg.levelGen(3);
-            }
-            else
-            {
-                pg.dataReset();
                 SceneManager.LoadScene("ZachMadeLevel");
             }
         }

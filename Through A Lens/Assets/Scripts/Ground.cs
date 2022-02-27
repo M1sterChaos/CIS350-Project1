@@ -9,7 +9,7 @@ using UnityEngine;
 public class Ground : MonoBehaviour
 {
     public string color;
-    private BoxCollider2D _bc;
+    public BoxCollider2D _bc;
 
     public GameObject enemy;
     private Random random = new Random();
@@ -22,7 +22,7 @@ public class Ground : MonoBehaviour
        bool chance = (Random.Range(0, 2) == 0);
        enemy.SetActive(chance);
 
-
+      
        _bc = GetComponent<BoxCollider2D>();
     }
 

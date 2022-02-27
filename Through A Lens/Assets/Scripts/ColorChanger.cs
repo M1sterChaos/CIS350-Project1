@@ -20,7 +20,7 @@ public class ColorChanger : MonoBehaviour
     Dictionary<string, Color> ColorsList = new Dictionary<string, Color>();
 
     // Initial color is green
-    private static string _colorText;
+    public static string _colorText;
     private static Color _color;
 
     
@@ -46,7 +46,7 @@ public class ColorChanger : MonoBehaviour
     void Start()
     {
         reset();
-        textbox.GetComponent<Text>();
+        //textbox.GetComponent<Text>();
         textbox.text = _colorText;
         textbox.color = _color;
 
@@ -55,7 +55,7 @@ public class ColorChanger : MonoBehaviour
         ColorsList.Add("RED", Color.red);
         ColorsList.Add("BLUE", Color.blue);
 
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        //spriteRenderer = GameObject.FindGameObjectsWithTag("Player").Get;
     }
 
     void Update()

@@ -525,7 +525,7 @@ PrefabInstance:
     - target: {fileID: 1180187846689619936, guid: 10408b44e2056d047ad47c5471002279,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 7237138624448905153, guid: 10408b44e2056d047ad47c5471002279,
         type: 3}

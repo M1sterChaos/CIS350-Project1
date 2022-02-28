@@ -40,7 +40,7 @@ public class WinScript : MonoBehaviour
             }
             else if(PlatformGenerator.level >= 2)
             {
-                SceneManager.LoadScene("ZachMadeLevel");
+                SceneManager.LoadScene("ZachMadeScene");
             }
         }
     }

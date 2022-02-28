@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Zach Daly
+ * Project 2
+ * Controls platform moving
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

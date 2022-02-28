@@ -45,8 +45,6 @@ public class ColorChanger : MonoBehaviour
         ColorsList.Add("YELLOW", Color.yellow);
         ColorsList.Add("RED", Color.red);
         ColorsList.Add("BLUE", Color.blue);
-
-        spriteRenderer = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
     }
 
     void Update()

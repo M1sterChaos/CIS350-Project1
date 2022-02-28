@@ -33,6 +33,7 @@ public class PlatformGenerator : MonoBehaviour
     private GameObject[] stuff;
 
     public static int level = 0;
+    public int wha;
 
     // Start is called before the first frame update
     void Start()
@@ -141,4 +142,8 @@ public class PlatformGenerator : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        wha = level;
+    }
 }

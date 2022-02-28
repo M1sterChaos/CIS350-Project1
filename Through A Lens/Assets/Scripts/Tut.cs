@@ -23,7 +23,7 @@ public class Tut : MonoBehaviour
     private void Start()
     {
         tutorial = GameObject.FindGameObjectWithTag("Tutorial").GetComponent<Canvas>();
-        if (tutViewed == false)
+        if (!tutViewed)
         {
             tutorial.enabled = true;
         }

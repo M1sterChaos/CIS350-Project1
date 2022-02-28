@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1429180835613435314}
   - component: {fileID: 1429180835613435315}
   - component: {fileID: 1429180835613435312}
-  - component: {fileID: 114310169136921438}
+  - component: {fileID: 114648275279264878}
   m_Layer: 8
   m_Name: GreenWall
   m_TagString: Floor
@@ -107,7 +107,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114310169136921438
+--- !u!114 &114648275279264878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,9 +116,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1429180835613435313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdbcf46d77020cf46a86a62fa94e1901, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fde5962b0392e04b8fcbc338cbc7474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 
-  _bc: {fileID: 0}
-  enemy: {fileID: 0}
+  color: GREEN
+  _bc: {fileID: 1429180835613435312}

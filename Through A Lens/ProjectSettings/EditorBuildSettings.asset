@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ZachMadeScene.unity
     guid: 3f23756ea2bec2b4aa315a31661d7f85
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 760bff2a9022f2041a491d0110498e21
   m_configObjects: {}

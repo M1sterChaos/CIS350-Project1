@@ -31,13 +31,14 @@ public class WinScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && complete)
         {
             vicTextCanvas.enabled = false;
+            Tut.tutViewed = true;
 
-            if(PlatformGenerator.level < 3)
+            if(PlatformGenerator.level < 2)
             {
                 PlatformGenerator.level++;
                 SceneManager.LoadScene("AustinTestScene");
             }
-            else if(PlatformGenerator.level == 3)
+            else if(PlatformGenerator.level >= 2)
             {
                 SceneManager.LoadScene("ZachMadeLevel");
             }

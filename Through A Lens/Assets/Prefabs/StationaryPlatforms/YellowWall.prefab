@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5495373717380979064}
   - component: {fileID: 5495373717380979065}
   - component: {fileID: 5495373717380979078}
-  - component: {fileID: 114168299524573482}
+  - component: {fileID: 114484453014654424}
   m_Layer: 8
   m_Name: YellowWall
   m_TagString: Floor
@@ -107,7 +107,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114168299524573482
+--- !u!114 &114484453014654424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,9 +116,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5495373717380979079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdbcf46d77020cf46a86a62fa94e1901, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fde5962b0392e04b8fcbc338cbc7474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 
-  _bc: {fileID: 0}
-  enemy: {fileID: 0}
+  color: YELLOW
+  _bc: {fileID: 5495373717380979078}

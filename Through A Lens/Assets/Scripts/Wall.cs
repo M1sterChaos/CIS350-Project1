@@ -11,9 +11,6 @@ public class Wall : MonoBehaviour
     public string color;
     public BoxCollider2D _bc;
 
-    public GameObject enemy;
-    private Random random = new Random();
-
 
     // Start is called before the first frame update
     void Start()

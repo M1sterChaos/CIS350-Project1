@@ -10,6 +10,7 @@ using UnityEngine;
 public class ColorChanger : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
+    public GameObject colorwheel;
     public Sprite red;
     public Sprite blue;
     public Sprite green;

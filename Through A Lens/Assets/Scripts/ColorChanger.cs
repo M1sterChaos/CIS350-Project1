@@ -4,17 +4,17 @@
  * Controls color changing
  */
 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ColorChanger : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
-    public GameObject colorwheel;
-    public Sprite red;
-    public Sprite blue;
-    public Sprite green;
-    public Sprite yellow;
+    public SpriteRenderer playerSprite;
+    public Sprite[] playerSpritesArray = new Sprite[4];
+    public Image colorWheel;
+    public Sprite[] wheelSpritesArray = new Sprite[4];
 
     Dictionary<string, Color> ColorsList = new Dictionary<string, Color>();
 
@@ -54,30 +54,27 @@ public class ColorChanger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             _colorText = "GREEN";
-            ChangeSprite(green);
+            playerSprite.sprite = playerSpritesArray[0];
+            colorWheel.sprite = wheelSpritesArray[0];
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             _colorText = "YELLOW";
-            ChangeSprite(yellow);
+            playerSprite.sprite = playerSpritesArray[1];
+            colorWheel.sprite = wheelSpritesArray[1];
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             _colorText = "BLUE";
-            ChangeSprite(blue);
+            playerSprite.sprite = playerSpritesArray[3];
+            colorWheel.sprite = wheelSpritesArray[3];
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             _colorText = "RED";
-            ChangeSprite(red);
+            playerSprite.sprite = playerSpritesArray[2];
+            colorWheel.sprite = wheelSpritesArray[2];
         }
-
         _color = ColorsList[_colorText];
-    }
-
-    void ChangeSprite(Sprite newSprite)
-    {
-        if(spriteRenderer)
-            spriteRenderer.sprite = newSprite;
     }
 }

@@ -11,11 +11,55 @@ using UnityEngine;
 public class CameraFollowPlayer : MonoBehaviour
 {
     public GameObject Player;
-    private Vector3 offset = new Vector3(0, 0, -15);
+    private float leftx;
+    private float rightx;
+    private float topy;
+    private float bottomy;
+
+    private float x;
+    private float y;
+
+    private void Start()
+    {
+        leftx = -26.0f;
+        rightx = 243.0f;
+        topy = 57.0f;
+        bottomy = -23.0f;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Player.transform.position + offset;
+        if(transform.position.x >= rightx)
+        {
+            x = rightx;
+        }
+        else if(transform.position.x <= leftx)
+        {
+            x = leftx;
+        }
+        else
+        {
+            x = Player.transform.position.x;
+        }
+
+        if(transform.position.y >= topy)
+        {
+            y = topy;
+        }
+        else if (transform.position.y <=bottomy)
+        {
+            y = bottomy;
+        }
+        else
+        {
+            y = Player.transform.position.y;
+            
+        }
+
+        transform.position = new Vector3(x, y, -15.0f);
+        
+
+        
     }
 }

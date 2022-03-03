@@ -11,6 +11,8 @@ using UnityEngine.SceneManagement;
 // attach to player
 public class LoseOnFall : MonoBehaviour
 {
+    public Camera cam;
+
     public Canvas loseScreen;
     public static bool gameOver;
     public static bool won = false;
@@ -35,6 +37,7 @@ public class LoseOnFall : MonoBehaviour
             {
                 GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 3, 0);
                 loseScreen.enabled = false;
+                GameObject.FindGameObjectWithTag("MainCamera").transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(0, 0, -15);
             }
         }
     }

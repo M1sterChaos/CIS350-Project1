@@ -372,7 +372,6 @@ GameObject:
   - component: {fileID: 162298800}
   - component: {fileID: 162298802}
   - component: {fileID: 162298801}
-  - component: {fileID: 162298803}
   m_Layer: 5
   m_Name: Color Wheel
   m_TagString: Untagged
@@ -434,24 +433,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162298799}
   m_CullTransparentMesh: 0
---- !u!114 &162298803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162298799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff8358529df80b4c8216442f6a23d59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  img: {fileID: 162298801}
-  colorarray:
-  - {fileID: 21300000, guid: 700960d343c950a48a373e3cb0baaa44, type: 3}
-  - {fileID: 21300000, guid: b210239f6b9e2fa45a3d7c0e9fa5d0c3, type: 3}
-  - {fileID: 21300000, guid: 5d4c3e5f20fa67247afc8b766bcb9de6, type: 3}
-  - {fileID: 21300000, guid: d06d41cad854ae946985715aa6092b6e, type: 3}
 --- !u!1001 &253703757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -926,7 +907,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542635112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 3.04, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1394,7 +1375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010604510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.04, z: 0}
+  m_LocalPosition: {x: -0.3, y: 3.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1488,6 +1469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e5e353846ce4d74d97c9903a32e4a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   loseScreen: {fileID: 0}
 --- !u!114 &1010604518
 MonoBehaviour:
@@ -1501,12 +1483,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e495684e505dee047896f87d2693248a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1010604511}
-  colorwheel: {fileID: 0}
-  red: {fileID: 21300000, guid: 9af2a7699dca268478255856e0381f87, type: 3}
-  blue: {fileID: 21300000, guid: f57d650824eab334d879dfbd132ce7c3, type: 3}
-  green: {fileID: 21300000, guid: 8e75bddab5a5df1459185661a4fe78af, type: 3}
-  yellow: {fileID: 21300000, guid: 95a4e20841db8c7419a091ea516fed92, type: 3}
+  playerSprite: {fileID: 1010604511}
+  playerSpritesArray:
+  - {fileID: 21300000, guid: 8e75bddab5a5df1459185661a4fe78af, type: 3}
+  - {fileID: 21300000, guid: 95a4e20841db8c7419a091ea516fed92, type: 3}
+  - {fileID: 21300000, guid: 9af2a7699dca268478255856e0381f87, type: 3}
+  - {fileID: 21300000, guid: f57d650824eab334d879dfbd132ce7c3, type: 3}
+  colorWheel: {fileID: 162298801}
+  wheelSpritesArray:
+  - {fileID: 21300000, guid: 700960d343c950a48a373e3cb0baaa44, type: 3}
+  - {fileID: 21300000, guid: b210239f6b9e2fa45a3d7c0e9fa5d0c3, type: 3}
+  - {fileID: 21300000, guid: 5d4c3e5f20fa67247afc8b766bcb9de6, type: 3}
+  - {fileID: 21300000, guid: d06d41cad854ae946985715aa6092b6e, type: 3}
 --- !u!114 &1010604519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1612,7 +1600,7 @@ GameObject:
   - component: {fileID: 1049561856}
   - component: {fileID: 1049561855}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HUDCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

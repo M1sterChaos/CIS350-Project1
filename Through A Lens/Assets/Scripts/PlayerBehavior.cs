@@ -3,97 +3,59 @@
  * Project 1
  * Controls player movement
  */
+
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBehavior : MonoBehaviour
-{
-    // Player object
-    public GameObject player;
+public class PlayerBehavior : PhysicsObject {
 
-    //Speed and jump speed
-    [SerializeField]
-    private int speed;
-    [SerializeField]
-    private int jumpSpeed;
+    public float maxSpeed = 7;
+    public float jumpTakeOffSpeed = 7;
 
-    //Variables
-    private Rigidbody2D rb;
-    private bool canJump = true;
-    private float xinput;
+    public static bool playerFlipX = false;
 
-    //Decting floor
-    private LayerMask mask;
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
-    //Vectors to move and jump
-    private Vector2 move;
-    private Vector2 jump;
-
-    // Prevent user input right after tut
-    //private float _elapsedTime = 0;
-
-    
-
-    // Sets the intial jump vector, grabs layer mask, and grabs rigidbody
-    void Start()
+    // Use this for initialization
+    void Awake () 
     {
-        jump = new Vector2(0, jumpSpeed);
-        rb = GetComponent<Rigidbody2D>();
-        
-
-        mask = LayerMask.GetMask("Floor");
+        spriteRenderer = GetComponent<SpriteRenderer> (); 
+        animator = GetComponent<Animator> ();
     }
 
-    // Allows the player to move, sets a raycast pointing down that checks for if you
-    // land on the floor, and sees if you can jump
-    void Update()
+    protected override void ComputeVelocity()
     {
-        // if (!Tut.tutViewed) return;
+        Vector2 move = Vector2.zero;
 
-        // Stop all play behavior if the tut is not finished
-        //if (Tut.tutViewed && _elapsedTime < 0.1)
-        //{
-        //    _elapsedTime += Time.deltaTime;
-        //    return;
-        //}
+        move.x = Input.GetAxis ("Horizontal");
 
-        PlayerMove();
-
-        if(Input.GetKeyDown(KeyCode.W) && canJump == true)
-        {
-            PlayerJump();
+        if (Input.GetKeyDown(KeyCode.W) && grounded) {
+            velocity.y = jumpTakeOffSpeed;
         }
-        
-    }
 
-    //Moves the player along the x axis by grabbing the axis and setting that in a vector
-    private void PlayerMove()
-    {
-        xinput = Input.GetAxis("Horizontal");
-        move = new Vector2(xinput * Time.deltaTime * speed, 0f * Time.deltaTime);
-
-        this.transform.Translate(move, Space.World);
-    }
-    //Allows the player to jump by adding force to the rigidbody making the player go up
-    private void PlayerJump()
-    {
-        canJump = false;
-        rb.AddForce(jump * Vector2.up, ForceMode2D.Impulse);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Floor" || collision.gameObject.tag == "StartPlat")
+        if(move.x > 0.01f)
         {
-            canJump = true;
-
-            // Player stays on moving platform
-            player.transform.parent = collision.gameObject.transform;
+            if(spriteRenderer.flipX == true)
+            {
+                spriteRenderer.flipX = false;
+                playerFlipX = false;
+            }
+        } 
+        else if (move.x < -0.01f)
+        {
+            if(spriteRenderer.flipX == false)
+            {
+                spriteRenderer.flipX = true;
+                playerFlipX = true;
+            }
         }
-    }
 
-    // Reset player.transform on leaving moving platform
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        player.transform.parent = null;
+        animator.SetBool ("grounded", grounded);
+        animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);
+        animator.SetFloat ("velocityY", velocity.y);
+
+        targetVelocity = move * maxSpeed;
     }
 }

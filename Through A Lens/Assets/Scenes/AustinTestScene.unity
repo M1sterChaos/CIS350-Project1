@@ -1312,6 +1312,7 @@ GameObject:
   - component: {fileID: 1010604517}
   - component: {fileID: 1010604518}
   - component: {fileID: 1010604519}
+  - component: {fileID: 1010604520}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1414,9 +1415,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4cd1f9bef9c0546bdee958ba77ad1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1010604510}
-  speed: 10
-  jumpSpeed: 9
+  minGroundNormalY: 0.65
+  gravityModifier: 1
+  maxSpeed: 13
+  jumpTakeOffSpeed: 13
 --- !u!61 &1010604515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1508,6 +1510,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vicTextCanvas: {fileID: 473746941}
+--- !u!95 &1010604520
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010604510}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa2c54fbfb2cf13478e3fb3976d479a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1019269538
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6984399541136852093}
   - component: {fileID: 6984399541136852034}
   - component: {fileID: 6984399541136852095}
+  - component: {fileID: 95174744449709768}
   - component: {fileID: 6984399541136852089}
   - component: {fileID: 6984399541136852092}
   - component: {fileID: 6984399541136852094}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: 8e75bddab5a5df1459185661a4fe78af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f57d650824eab334d879dfbd132ce7c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,9 +99,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4cd1f9bef9c0546bdee958ba77ad1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6984399541136852035}
-  speed: 10
-  jumpSpeed: 9
+  minGroundNormalY: 0.65
+  gravityModifier: 1
+  maxSpeed: 7
+  jumpTakeOffSpeed: 12
+--- !u!95 &95174744449709768
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984399541136852035}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa2c54fbfb2cf13478e3fb3976d479a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &6984399541136852089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e5e353846ce4d74d97c9903a32e4a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   loseScreen: {fileID: 0}
 --- !u!114 &6984399541136852091
 MonoBehaviour:
@@ -187,12 +209,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e495684e505dee047896f87d2693248a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  red: {fileID: 21300000, guid: 9af2a7699dca268478255856e0381f87, type: 3}
-  blue: {fileID: 21300000, guid: f57d650824eab334d879dfbd132ce7c3, type: 3}
-  green: {fileID: 21300000, guid: 8e75bddab5a5df1459185661a4fe78af, type: 3}
-  yellow: {fileID: 21300000, guid: 95a4e20841db8c7419a091ea516fed92, type: 3}
-  textbox: {fileID: 0}
+  playerSprite: {fileID: 0}
+  playerSpritesArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  colorWheel: {fileID: 0}
+  wheelSpritesArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &6984399541136852090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,4 +234,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vicTextCanvas: {fileID: 0}
-  pg: {fileID: 0}

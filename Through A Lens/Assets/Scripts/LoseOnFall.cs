@@ -35,6 +35,7 @@ public class LoseOnFall : MonoBehaviour
             // press R to restart
             if (Input.GetKeyDown(KeyCode.R))
             {
+                gameOver = false;
                 GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 3, 0);
                 loseScreen.enabled = false;
                 GameObject.FindGameObjectWithTag("MainCamera").transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(0, 0, -15);

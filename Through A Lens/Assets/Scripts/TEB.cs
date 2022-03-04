@@ -41,6 +41,7 @@ public class TEB : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             hit = true;
+            LoseOnFall.gameOver = true;
             loseScreen.enabled = true;
         }
     }

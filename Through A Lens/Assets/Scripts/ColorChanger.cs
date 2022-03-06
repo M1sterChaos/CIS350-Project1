@@ -15,6 +15,8 @@ public class ColorChanger : MonoBehaviour
     public Sprite[] playerSpritesArray = new Sprite[4];
     public Image colorWheel;
     public Sprite[] wheelSpritesArray = new Sprite[4];
+    private Animator animator;
+    public RuntimeAnimatorController[] runtimeAnimatorControllers = new RuntimeAnimatorController[4];
 
     Dictionary<string, Color> ColorsList = new Dictionary<string, Color>();
 
@@ -38,6 +40,11 @@ public class ColorChanger : MonoBehaviour
         _color = Color.green;
     }
 
+    void Awake () 
+    {
+        animator = this.GetComponent<Animator>();
+    }
+
     void Start()
     {
         reset();
@@ -54,26 +61,26 @@ public class ColorChanger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             _colorText = "GREEN";
-            playerSprite.sprite = playerSpritesArray[0];
+            animator.runtimeAnimatorController = runtimeAnimatorControllers[0];
             colorWheel.sprite = wheelSpritesArray[0];
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             _colorText = "YELLOW";
-            playerSprite.sprite = playerSpritesArray[1];
+            animator.runtimeAnimatorController = runtimeAnimatorControllers[1];
             colorWheel.sprite = wheelSpritesArray[1];
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            _colorText = "BLUE";
-            playerSprite.sprite = playerSpritesArray[3];
-            colorWheel.sprite = wheelSpritesArray[3];
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             _colorText = "RED";
-            playerSprite.sprite = playerSpritesArray[2];
+            animator.runtimeAnimatorController = runtimeAnimatorControllers[2];
             colorWheel.sprite = wheelSpritesArray[2];
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            _colorText = "BLUE";
+            animator.runtimeAnimatorController = runtimeAnimatorControllers[3];
+            colorWheel.sprite = wheelSpritesArray[3];
         }
         _color = ColorsList[_colorText];
     }

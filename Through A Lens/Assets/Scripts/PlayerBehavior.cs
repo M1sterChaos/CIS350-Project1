@@ -58,4 +58,10 @@ public class PlayerBehavior : PhysicsObject {
 
         targetVelocity = move * maxSpeed;
     }
+
+    void Update(){
+        base.Update();
+        if(LoseOnFall.gameOver)
+            animator.SetBool ("gameover", LoseOnFall.gameOver);
+    }
 }

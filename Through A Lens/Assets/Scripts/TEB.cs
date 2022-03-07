@@ -15,9 +15,15 @@ public class TEB : MonoBehaviour
     private SpriteRenderer sp;
     private bool hit = false;
 
+    private healthBehavior hb;
+    public GameObject target1;
+    public GameObject target2;
+    bool firstTarget = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        hb = GameObject.FindGameObjectWithTag("HB").GetComponent<healthBehavior>();
         sp = this.gameObject.GetComponent<SpriteRenderer>();
         sp.sprite = enemycolors[Random.Range(0,4)];
         bc = GetComponent<BoxCollider2D>();
@@ -28,6 +34,7 @@ public class TEB : MonoBehaviour
 
     private void Update()
     {
+        MoveOnPlatform();
         if(hit && Input.GetKeyDown(KeyCode.R))
         {
             GameObject.FindGameObjectWithTag("Player").transform.SetPositionAndRotation(new Vector3(0, 1, 0), Quaternion.identity);
@@ -41,8 +48,13 @@ public class TEB : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             hit = true;
-            LoseOnFall.gameOver = true;
-            loseScreen.enabled = true;
+            hb.loseHealth();
+            if(hb.healthleft < 0)
+            {
+                LoseOnFall.gameOver = true;
+                loseScreen.enabled = true;
+            }
+
         }
     }
 
@@ -52,6 +64,22 @@ public class TEB : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+        }
+        if(collision.gameObject.tag == "target")
+        {
+            firstTarget = !firstTarget;
+        }
+    }
+    public void MoveOnPlatform()
+    {
+
+        if(firstTarget)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target1.transform.position, 1f * Time.deltaTime);
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target2.transform.position, 1f * Time.deltaTime);
         }
     }
 }

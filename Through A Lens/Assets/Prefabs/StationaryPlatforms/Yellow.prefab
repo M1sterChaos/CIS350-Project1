@@ -120,4 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: YELLOW
+  _bc: {fileID: 7205728623395963325}
+  neutral: 0
   enemy: {fileID: 3571368785487764661, guid: 5b65aae10ac9f514c9986890d6d684dc, type: 3}

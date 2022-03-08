@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: BLUE
-  _bc: {fileID: 0}
+  _bc: {fileID: 5095376001615577759}
+  neutral: 0
   enemy: {fileID: 6501779021727099447}
 --- !u!1 &9213744675080153808
 GameObject:

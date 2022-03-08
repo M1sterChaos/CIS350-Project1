@@ -12,12 +12,12 @@ using UnityEngine;
 public class ShootPrefab : MonoBehaviour
 {
     public GameObject prefabToShoot;
-    public static bool allowShoot;
+    public static bool allowShoot = true;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && allowShoot)
         {
             GameObject projectile = Instantiate(prefabToShoot, transform.position, Quaternion.identity);
             Rigidbody2D projectileRB = projectile.GetComponent<Rigidbody2D>();

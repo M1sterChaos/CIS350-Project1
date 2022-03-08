@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: GREEN
+  _bc: {fileID: 6815312893902547772}
+  neutral: 0
   enemy: {fileID: 7134148738036585389}
 --- !u!1001 &5949706489853792024
 PrefabInstance:

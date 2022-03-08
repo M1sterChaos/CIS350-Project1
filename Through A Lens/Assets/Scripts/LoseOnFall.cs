@@ -16,6 +16,7 @@ public class LoseOnFall : MonoBehaviour
     public Canvas loseScreen;
     public static bool gameOver;
     public static bool won = false;
+    public static bool safePlay = false;
 
     private void Start()
     {
@@ -27,10 +28,12 @@ public class LoseOnFall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (transform.position.y < -20)
         {
             // press R to restart
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) || safePlay)
             {
                 gameOver = false;
                 GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 3, 0);

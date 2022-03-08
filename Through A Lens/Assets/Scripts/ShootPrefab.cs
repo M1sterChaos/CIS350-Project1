@@ -12,6 +12,7 @@ using UnityEngine;
 public class ShootPrefab : MonoBehaviour
 {
     public GameObject prefabToShoot;
+    public static bool allowShoot;
 
     // Update is called once per frame
     void Update()

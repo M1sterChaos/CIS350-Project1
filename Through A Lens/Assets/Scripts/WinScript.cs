@@ -31,7 +31,6 @@ public class WinScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && complete)
         {
             vicTextCanvas.enabled = false;
-            Tut.tutViewed = true;
 
             if(PlatformGenerator.level < 2)
             {

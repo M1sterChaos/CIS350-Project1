@@ -17,6 +17,7 @@ public class ColorChanger : MonoBehaviour
     public Sprite[] wheelSpritesArray = new Sprite[4];
     private Animator animator;
     public RuntimeAnimatorController[] runtimeAnimatorControllers = new RuntimeAnimatorController[4];
+    public static bool allowColorChange = true;
 
     Dictionary<string, Color> ColorsList = new Dictionary<string, Color>();
 
@@ -57,7 +58,8 @@ public class ColorChanger : MonoBehaviour
 
     void Update()
     {
-        
+        if(!allowColorChange) return;
+           
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             _colorText = "GREEN";

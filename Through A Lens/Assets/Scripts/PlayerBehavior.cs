@@ -18,6 +18,9 @@ public class PlayerBehavior : PhysicsObject {
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
+    public static bool allowJump = true;
+    public static bool allowMove = true;
+
     // Use this for initialization
     void Awake () 
     {
@@ -27,13 +30,15 @@ public class PlayerBehavior : PhysicsObject {
 
     protected override void ComputeVelocity()
     {
+        if (Input.GetKeyDown(KeyCode.W) && grounded && allowJump) {
+            velocity.y = jumpTakeOffSpeed;
+        }
+
+        if(!allowMove) return; 
+
         Vector2 move = Vector2.zero;
 
         move.x = Input.GetAxis ("Horizontal");
-
-        if (Input.GetKeyDown(KeyCode.W) && grounded) {
-            velocity.y = jumpTakeOffSpeed;
-        }
 
         if(move.x > 0.01f)
         {

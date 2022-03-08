@@ -10,6 +10,7 @@ public class Ground : MonoBehaviour
 {
     public string color;
     public BoxCollider2D _bc;
+    public bool neutral;
 
     public GameObject enemy;
     private Random random = new Random();
@@ -31,6 +32,6 @@ public class Ground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _bc.enabled = (ColorChanger.colorText == color && !LoseOnFall.gameOver);
+        _bc.enabled = ((ColorChanger.colorText == color || neutral) && !LoseOnFall.gameOver);
     }
 }

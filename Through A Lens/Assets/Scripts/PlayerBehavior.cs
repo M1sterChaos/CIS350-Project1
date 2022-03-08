@@ -61,7 +61,6 @@ public class PlayerBehavior : PhysicsObject {
 
     void Update(){
         base.Update();
-        if(LoseOnFall.gameOver)
-            animator.SetBool ("gameover", LoseOnFall.gameOver);
+        animator.SetBool ("gameover", LoseOnFall.gameOver);
     }
 }

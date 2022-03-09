@@ -2329,11 +2329,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e495684e505dee047896f87d2693248a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1300825266}
-  red: {fileID: 21300000, guid: 9af2a7699dca268478255856e0381f87, type: 3}
-  blue: {fileID: 21300000, guid: f57d650824eab334d879dfbd132ce7c3, type: 3}
-  green: {fileID: 21300000, guid: 8e75bddab5a5df1459185661a4fe78af, type: 3}
-  yellow: {fileID: 21300000, guid: 95a4e20841db8c7419a091ea516fed92, type: 3}
+  playerSprite: {fileID: 0}
+  playerSpritesArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  colorWheel: {fileID: 0}
+  wheelSpritesArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  runtimeAnimatorControllers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1300825261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2346,6 +2358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e5e353846ce4d74d97c9903a32e4a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   loseScreen: {fileID: 0}
 --- !u!61 &1300825262
 BoxCollider2D:
@@ -2420,9 +2433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4cd1f9bef9c0546bdee958ba77ad1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1300825258}
-  speed: 10
-  jumpSpeed: 9
+  minGroundNormalY: 0.65
+  gravityModifier: 1
+  maxSpeed: 7
+  jumpTakeOffSpeed: 7
 --- !u!212 &1300825266
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3362,11 +3376,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e495684e505dee047896f87d2693248a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  red: {fileID: 0}
-  blue: {fileID: 0}
-  green: {fileID: 0}
-  yellow: {fileID: 0}
+  playerSprite: {fileID: 0}
+  playerSpritesArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  colorWheel: {fileID: 0}
+  wheelSpritesArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  runtimeAnimatorControllers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1832348042
 Transform:
   m_ObjectHideFlags: 0
@@ -4926,7 +4952,7 @@ PrefabInstance:
     - target: {fileID: 1150900590838411850, guid: 0a25c2882378a87489750da9e50c6e5c,
         type: 3}
       propertyPath: m_Name
-      value: MovingGrnPlat
+      value: GreenMoveNoEnem
       objectReference: {fileID: 0}
     - target: {fileID: 1150900590838411853, guid: 0a25c2882378a87489750da9e50c6e5c,
         type: 3}

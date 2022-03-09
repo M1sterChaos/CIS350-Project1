@@ -16,7 +16,7 @@ public class DisplayScore : MonoBehaviour
     public static int score;
     public bool gameOver;
     public GameObject finish;
-    public PlatformGenerator pg;
+    //public PlatformGenerator pg;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class DisplayScore : MonoBehaviour
         score = 0;
         gameOver = false;
         scoreText.text = "Score: 0";
-        pg = gameObject.GetComponent<PlatformGenerator>();
+        //pg = gameObject.GetComponent<PlatformGenerator>();
     }
 
     // Update is called once per frame

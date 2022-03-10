@@ -13,7 +13,6 @@ public class CameraFollowPlayer : MonoBehaviour
     public GameObject Player;
     private float leftx;
     private float rightx;
-    private float topy;
     private float bottomy;
 
     private float x;
@@ -23,7 +22,6 @@ public class CameraFollowPlayer : MonoBehaviour
     {
         leftx = -26.0f;
         rightx = 243.0f;
-        topy = 57.0f;
         bottomy = -23.0f;
     }
 
@@ -43,11 +41,7 @@ public class CameraFollowPlayer : MonoBehaviour
             x = Player.transform.position.x;
         }
 
-        if(transform.position.y >= topy)
-        {
-            y = topy;
-        }
-        else if (transform.position.y <=bottomy)
+        if (transform.position.y <=bottomy)
         {
             y = bottomy;
         }

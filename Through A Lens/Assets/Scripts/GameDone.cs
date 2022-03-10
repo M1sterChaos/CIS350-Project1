@@ -1,13 +1,17 @@
-﻿using System.Collections;
+﻿/* Luke Lesimple
+ * Through a lens
+ * game ending hitbox
+ */
+
+//ONLY USE ON LAST LEVEL, NO CONDITIONS REQUIRED
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameDone : MonoBehaviour
+public class gamedone : MonoBehaviour
 {
-
-    // Update is called once per frame
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {

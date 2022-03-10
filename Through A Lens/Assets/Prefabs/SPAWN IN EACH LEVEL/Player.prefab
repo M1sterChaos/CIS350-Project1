@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2290779834217557234}
   - component: {fileID: 2290779834217557233}
   - component: {fileID: 2290779834217557232}
+  - component: {fileID: 114767666453122234}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -239,3 +240,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vicTextCanvas: {fileID: 0}
+--- !u!114 &114767666453122234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2290779834217557193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396e6ca2975d2b445a8defd87932cb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

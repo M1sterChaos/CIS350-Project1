@@ -6,7 +6,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 // attach to player
 public class LoseOnFall : MonoBehaviour

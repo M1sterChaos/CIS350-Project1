@@ -18,6 +18,7 @@ TagManager:
   - StartPlat
   - target
   - HB
+  - bg
   layers:
   - Default
   - TransparentFX

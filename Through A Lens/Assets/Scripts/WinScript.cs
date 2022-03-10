@@ -16,12 +16,15 @@ public class WinScript : MonoBehaviour
     private int win = 0;
     private bool complete = false;
 
+    public static int levelscompleted = 0;
+
     private void Start()
     {
         //displayScoreScript = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<DisplayScore>();
 
         vicTextCanvas = GameObject.FindGameObjectWithTag("VictoryMsg").GetComponent<Canvas>();
         vicTextCanvas.enabled = false;
+
 
         complete = false;
     }
@@ -32,14 +35,39 @@ public class WinScript : MonoBehaviour
         {
             vicTextCanvas.enabled = false;
 
-            if(PlatformGenerator.level < 2)
+            levelscompleted++;
+
+            Debug.Log(levelscompleted);
+            
+            if(levelscompleted <= 0)
             {
-                PlatformGenerator.level++;
-                SceneManager.LoadScene("AustinTestScene");
+                levelscompleted = -1;
+                SceneManager.LoadScene("Tutorial");
             }
-            else if(PlatformGenerator.level >= 2)
+            
+            else if (levelscompleted == 1)
             {
-                SceneManager.LoadScene("ZachMadeScene");
+                SceneManager.LoadScene("LukeLevel1");
+            }
+            
+            else if (levelscompleted <= 2)
+            {
+                SceneManager.LoadScene("LukeLevel2");
+            }
+            
+            else if (levelscompleted == 3)
+            {
+                SceneManager.LoadScene("ZachLevel1");
+            }
+            
+            if (levelscompleted == 4)
+            {
+                SceneManager.LoadScene("ZachLevel2");
+            }
+
+            else if (levelscompleted >= 5)
+            {
+                SceneManager.LoadScene("EndScreen");
             }
         }
     }

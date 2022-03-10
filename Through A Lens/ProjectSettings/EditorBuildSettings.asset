@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AustinTestScene.unity
     guid: 50581cb54015c0741ab5369a80c6dfe2
   - enabled: 1
@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: 760bff2a9022f2041a491d0110498e21
+  - enabled: 1
+    path: Assets/Scenes/LukeLevel1.unity
+    guid: d114376f55e66624ab696912328f2e59
+  - enabled: 1
+    path: Assets/Scenes/ZachLevel1.unity
+    guid: 15deff4568bea0644a5d65078b5271c6
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 6bce17f9d46c5994abfa15a3aa17a78d
+  - enabled: 1
+    path: Assets/Scenes/LukeLevel2.unity
+    guid: 20f978d12bef711498ecde8568299922
   m_configObjects: {}

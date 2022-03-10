@@ -11,7 +11,7 @@ using UnityEngine;
 public class PlayerBehavior : PhysicsObject {
 
     public float maxSpeed = 7;
-    public float jumpTakeOffSpeed = 7;
+    public float jumpTakeOffSpeed = 12;
 
     public static bool playerFlipX = false;
 
@@ -67,5 +67,10 @@ public class PlayerBehavior : PhysicsObject {
     void Update(){
         base.Update();
         animator.SetBool ("gameover", LoseOnFall.gameOver);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        grounded = true;
     }
 }

@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/AustinTestScene.unity
     guid: 50581cb54015c0741ab5369a80c6dfe2
   - enabled: 1
-    path: Assets/Scenes/ZachMadeScene.unity
+    path: Assets/Scenes/ZachLevel2.unity
     guid: 3f23756ea2bec2b4aa315a31661d7f85
   - enabled: 1
     path: Assets/Scenes/EndScreen.unity

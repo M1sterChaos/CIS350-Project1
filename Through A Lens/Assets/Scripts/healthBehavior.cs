@@ -27,6 +27,14 @@ public class healthBehavior : MonoBehaviour
         emptyHealth[2].SetActive(false);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && LoseOnFall.gameOver)
+        {
+            Start();
+        }
+    }
+
     public void loseHealth()
     {
         if(healthleft >= 0)
